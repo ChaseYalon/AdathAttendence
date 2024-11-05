@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Attendance</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" href="../img/adath.png">
+
+</head>
+<body>
+    <div class="header-container">
+        <header>
+        <h1 class="child">Welcome to Adath Emanuel</h1>
+        <a href="index.html" class="home-link" class="child">
+            <img src="../img/home.png" alt="Home" height="50px" widht="50px">
+        </a>
+    </header>
+    </div>
+
+    <div class="center">
+        <h2>Take Attendance</h2>
+        
+        <div>
+            <select id="classSelect">
+                <option value="">Select a class</option>
+            </select>
+        </div>
+
+        <div id="attendanceForm" style="display: none;">
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Present</th>
+                    </tr>
+                </thead>
+                <tbody id="studentList">
+                </tbody>
+            </table>
+            <button onclick="submitAttendance()">Submit Attendance</button>
+        </div>
+    </div>
+
+    <script>
+        // Fetch classes and populate dropdown
+        async function loadClasses() {
+            try {
+                const response = await fetch('/application/database.json');
+                const data = await response.json();
+                const classSelect = document.getElementById('classSelect');
+                
+                data.classes.forEach(classData => {
+                    const option = document.createElement('option');
+                    option.value = classData.id;
+                    option.textContent = classData.name;
+                    classSelect.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error loading classes:', error);
+            }
+        }
+
+        // Load students when class is selected
+        document.getElementById('classSelect').addEventListener('change', async function() {
+            const classId = this.value;
+            if (!classId) {
+                document.getElementById('attendanceForm').style.display = 'none';
+                return;
+            }
+
+            try {
+                const response = await fetch('/application/database.json');
+                const data = await response.json();
+                const selectedClass = data.classes.find(c => c.id === classId);
+                
+                if (selectedClass) {
+                    const studentList = document.getElementById('studentList');
+                    studentList.innerHTML = '';
+                    
+                    selectedClass.students.forEach(student => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${student.firstName} ${student.lastName}</td>
+                            <td>
+                                <input type="checkbox" name="attendance" 
+                                    value="${student.firstName} ${student.lastName}">
+                            </td>
+                        `;
+                        studentList.appendChild(row);
+                    });
+                    
+                    document.getElementById('attendanceForm').style.display = 'block';
+                }
+            } catch (error) {
+                console.error('Error loading students:', error);
+            }
+        });
+
+        // Submit attendance
+        async function submitAttendance() {
+            const classId = document.getElementById('classSelect').value;
+            if (!classId) {
+                alert('Please select a class');
+                return;
+            }
+
+            const checkboxes = document.querySelectorAll('input[name="attendance"]');
+            const attendance = Array.from(checkboxes).map(checkbox => ({
+                studentName: checkbox.value,
+                present: checkbox.checked
+            }));
+
+            try {
+                const response = await fetch('/update-attendance', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        classId: classId,
+                        attendance: attendance
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Attendance submitted successfully!');
+                    document.getElementById('classSelect').value = '';
+                    document.getElementById('attendanceForm').style.display = 'none';
+                } else {
+                    throw new Error('Failed to submit attendance');
+                }
+            } catch (error) {
+                console.error('Error submitting attendance:', error);
+                alert('Failed to submit attendance: ' + error.message);
+            }
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', loadClasses);
+    </script>
+</body>
+</html>

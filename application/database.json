@@ -1,0 +1,316 @@
+{
+  "classes": [
+    {
+      "name": "Test Class",
+      "teacher": {
+        "firstName": "John",
+        "lastName": "Doe"
+      },
+      "students": [
+        {
+          "firstName": "Student",
+          "lastName": "1"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "2"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "3"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "4"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "5"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "6"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "7"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "8"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "9"
+        },
+        {
+          "firstName": "Student",
+          "lastName": "10"
+        }
+      ],
+      "madrichim": [
+        {
+          "firstName": "John",
+          "lastName": "Deer"
+        },
+        {
+          "firstName": "Jane",
+          "lastName": "Deer"
+        }
+      ],
+      "attendanceHistory": [
+        {
+          "date": "2024-11-04T13:50:47.575Z",
+          "attendance": [
+            {
+              "studentName": "Student 1",
+              "present": true
+            },
+            {
+              "studentName": "Student 2",
+              "present": true
+            },
+            {
+              "studentName": "Student 3",
+              "present": false
+            },
+            {
+              "studentName": "Student 4",
+              "present": true
+            },
+            {
+              "studentName": "Student 5",
+              "present": true
+            },
+            {
+              "studentName": "Student 6",
+              "present": true
+            },
+            {
+              "studentName": "Student 7",
+              "present": false
+            },
+            {
+              "studentName": "Student 8",
+              "present": true
+            },
+            {
+              "studentName": "Student 9",
+              "present": true
+            },
+            {
+              "studentName": "Student 10",
+              "present": true
+            }
+          ]
+        },
+        {
+          "date": "2024-11-04T13:51:05.633Z",
+          "attendance": [
+            {
+              "studentName": "Student 1",
+              "present": true
+            },
+            {
+              "studentName": "Student 2",
+              "present": true
+            },
+            {
+              "studentName": "Student 3",
+              "present": true
+            },
+            {
+              "studentName": "Student 4",
+              "present": true
+            },
+            {
+              "studentName": "Student 5",
+              "present": true
+            },
+            {
+              "studentName": "Student 6",
+              "present": true
+            },
+            {
+              "studentName": "Student 7",
+              "present": true
+            },
+            {
+              "studentName": "Student 8",
+              "present": true
+            },
+            {
+              "studentName": "Student 9",
+              "present": true
+            },
+            {
+              "studentName": "Student 10",
+              "present": true
+            }
+          ]
+        },
+        {
+          "date": "2024-11-04T13:51:10.396Z",
+          "attendance": [
+            {
+              "studentName": "Student 1",
+              "present": false
+            },
+            {
+              "studentName": "Student 2",
+              "present": false
+            },
+            {
+              "studentName": "Student 3",
+              "present": false
+            },
+            {
+              "studentName": "Student 4",
+              "present": false
+            },
+            {
+              "studentName": "Student 5",
+              "present": false
+            },
+            {
+              "studentName": "Student 6",
+              "present": false
+            },
+            {
+              "studentName": "Student 7",
+              "present": false
+            },
+            {
+              "studentName": "Student 8",
+              "present": false
+            },
+            {
+              "studentName": "Student 9",
+              "present": false
+            },
+            {
+              "studentName": "Student 10",
+              "present": false
+            }
+          ]
+        },
+        {
+          "date": "2024-11-04T13:51:18.497Z",
+          "attendance": [
+            {
+              "studentName": "Student 1",
+              "present": true
+            },
+            {
+              "studentName": "Student 2",
+              "present": false
+            },
+            {
+              "studentName": "Student 3",
+              "present": true
+            },
+            {
+              "studentName": "Student 4",
+              "present": true
+            },
+            {
+              "studentName": "Student 5",
+              "present": true
+            },
+            {
+              "studentName": "Student 6",
+              "present": false
+            },
+            {
+              "studentName": "Student 7",
+              "present": false
+            },
+            {
+              "studentName": "Student 8",
+              "present": false
+            },
+            {
+              "studentName": "Student 9",
+              "present": false
+            },
+            {
+              "studentName": "Student 10",
+              "present": false
+            }
+          ]
+        },
+        {
+          "date": "2024-11-05T00:05:53.531Z",
+          "attendance": [
+            {
+              "studentName": "Student 1",
+              "present": true
+            },
+            {
+              "studentName": "Student 2",
+              "present": true
+            },
+            {
+              "studentName": "Student 3",
+              "present": false
+            },
+            {
+              "studentName": "Student 4",
+              "present": false
+            },
+            {
+              "studentName": "Student 5",
+              "present": false
+            },
+            {
+              "studentName": "Student 6",
+              "present": false
+            },
+            {
+              "studentName": "Student 7",
+              "present": true
+            },
+            {
+              "studentName": "Student 8",
+              "present": true
+            },
+            {
+              "studentName": "Student 9",
+              "present": true
+            },
+            {
+              "studentName": "Student 10",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "id": "1730728228698"
+    },
+    {
+      "name": "Ex2",
+      "teacher": {
+        "firstName": "Jane",
+        "lastName": "Deer"
+      },
+      "students": [
+        {
+          "firstName": "Chase",
+          "lastName": "Yalon"
+        },
+        {
+          "firstName": "Ella",
+          "lastName": "Yalon"
+        }
+      ],
+      "madrichim": [
+        {
+          "firstName": "John",
+          "lastName": "Doe"
+        }
+      ],
+      "attendanceHistory": [],
+      "id": "1730728845395"
+    }
+  ]
+}
